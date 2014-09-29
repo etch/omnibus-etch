@@ -13,3 +13,5 @@ gem 'omnibus-software', github: 'opscode/omnibus-software', branch: 'omnibus/3.2
 # Use Test Kitchen with Vagrant for converging the build environment
 gem 'test-kitchen',    '~> 1.2'
 gem 'kitchen-vagrant', '~> 0.14'
+
+gem 'ffi', '~> 1.9.5'
