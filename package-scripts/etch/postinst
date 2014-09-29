@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# Perform necessary etch setup steps
+# after package is installed.
+#
+
+PROGNAME=$(basename $0)
+
+function error_exit
+{
+  echo "${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
+  exit 1
+}
+
+SRC_DIR=/opt/etch
+DEST_DIR=/usr/bin
+
+ln -sf $SRC_DIR/bin/etch $DEST_DIR/ || error_exit "Cannot link etch"
+ln -sf $SRC_DIR/bin/etch_to_trunk $DEST_DIR/ || error_exit "Cannot link etch_to_trunk"
+ln -sf $SRC_DIR/bin/etch_cron_wrapper $DEST_DIR/ || error_exit "Cannot link etch_cron_wrapper"
+
+echo "Thank you for installing etch!"
+
+exit 0

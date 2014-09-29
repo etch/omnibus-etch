@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# Perform necessary etch removal steps
+# after package is uninstalled.
+#
+
+echo "etch has been uninstalled!"
+
+exit 0
