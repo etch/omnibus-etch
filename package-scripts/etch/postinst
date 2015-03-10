@@ -12,13 +12,6 @@ function error_exit
   exit 1
 }
 
-SRC_DIR=/opt/etch
-DEST_DIR=/usr/bin
-
-ln -sf $SRC_DIR/bin/etch $DEST_DIR/ || error_exit "Cannot link etch"
-ln -sf $SRC_DIR/bin/etch_to_trunk $DEST_DIR/ || error_exit "Cannot link etch_to_trunk"
-ln -sf $SRC_DIR/bin/etch_cron_wrapper $DEST_DIR/ || error_exit "Cannot link etch_cron_wrapper"
-
 echo "Thank you for installing etch!"
 
 exit 0
