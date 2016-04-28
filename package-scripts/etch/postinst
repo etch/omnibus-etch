@@ -1,16 +1,30 @@
-#!/bin/bash
+#!/bin/sh
 #
 # Perform necessary etch setup steps
 # after package is installed.
 #
 
-PROGNAME=$(basename $0)
+PROGNAME=`basename $0`
 
-function error_exit
+usr_bin_symlinks="\
+  /opt/etch/bin/etch \
+  /opt/etch/bin/etch_cron_wrapper \
+  /opt/etch/bin/etch_to_trunk \
+"
+symlink_command="ln -sf ${usr_bin_symlinks} /usr/bin/"
+
+create_symlinks()
+{
+  ${symlink_command} || error_exit "Failed to create symlinks in /usr/bin"
+}
+
+error_exit()
 {
   echo "${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
   exit 1
 }
+
+create_symlinks
 
 echo "Thank you for installing etch!"
 
