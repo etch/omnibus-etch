@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # Perform necessary etch removal steps
 # after package is uninstalled.
